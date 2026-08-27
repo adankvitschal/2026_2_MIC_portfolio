@@ -13,14 +13,21 @@
 //Configuração da Interrupção Externa (INT0/INT1)
 
 ISR(INT0_vect) { //Função no vetor de interrupção INT0
-	PORTB |= (1<<PORTB1);//Acende led em PB1
+	PORTB |= (1<<PORTB1);	//Acende led em PB1
+	_delay_ms(50);
+	PORTB &= ~(1<<PORTB1);	//Apaga led em PB1
+}
+
+ISR(INT1_vect) { //Função no vetor de interrupção INT1
+	PORTB |= (1<<PORTB1);	//Acende led em PB1
 	_delay_ms(100);
-	PORTB &= ~(1<<PORTB1);//Apaga led em PB1
+	PORTB &= ~(1<<PORTB1);	//Apaga led em PB1
 }
 
 void INT_config() {
-	EICRA = (1<<ISC01)|(0<<ISC00); //configura INT0 na borda de descida
-	EIMSK = (1<<INT0); //Habilita INT0
+	EICRA = (1<<ISC11)|(1<<ISC10)	//configura INT1 na borda de subida
+		  | (1<<ISC01)|(0<<ISC00);	//configura INT0 na borda de descida
+	EIMSK = (1<<INT1)|(1<<INT0);	//Habilita INT0 e INT1
 }
 
 void GPIO_config() {
