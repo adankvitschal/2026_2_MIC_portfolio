@@ -40,7 +40,11 @@ int main(void) {
 	INT_config();
 	sei(); // Habilita Interrupções globalmente
     while(1) {
+		cli();	//Desabilita interrupções temporariamente
+        PORTB |= (1<<PORTB0);	//acende LED no pino PB0
 		_delay_ms(100);
-        PORTB ^= (1<<PORTB0); //alterna pino PB0
+		PORTB &= ~(1<<PORTB0);	//apaga LED no pino PB0
+		sei();	//Habilita novamente
+		_delay_ms(100);
     }
 }
