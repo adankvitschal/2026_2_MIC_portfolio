@@ -20,7 +20,7 @@
 
 <item itemtype="Rail" CircId="Rail-54" mainComp="false" ShowProp="Voltage" Show_id="false" Show_Val="true" Pos="844,484" rotation="0" hflip="1" vflip="1" label="Rail-54" idLabPos="-16,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" />
 
-<item itemtype="Oscope" CircId="Oscope-61" mainComp="false" Show_id="false" Show_Val="false" Pos="1188,568" rotation="0" hflip="1" vflip="1" label="Oscope-61" idLabPos="-90,-100" labelrot="0" valLabPos="-16,20" valLabRot="0" Basic_X="135 _Pixels" Basic_Y="135 _Pixels" TimDiv="1000000000" TimPos="0,0,0,0," VolDiv="1,1,1,1," Tunnels=",,,," Trigger="4" Filter="0.1 V" Trigger="4" AutoSC="4" Tracks="1" HideCh="false,false,false,false," VolPos="0,0,0,0," />
+<item itemtype="Oscope" CircId="Oscope-61" mainComp="false" Show_id="false" Show_Val="false" Pos="1188,568" rotation="0" hflip="1" vflip="1" label="Oscope-61" idLabPos="-90,-100" labelrot="0" valLabPos="-16,20" valLabRot="0" Basic_X="135 _Pixels" Basic_Y="135 _Pixels" TimDiv="100000000000" TimPos="0,0,0,0," VolDiv="1,1,1,1," Tunnels=",,,," Trigger="0" Filter="0.1 V" Trigger="0" AutoSC="4" Tracks="4" HideCh="false,false,false,true," VolPos="0,0,0,0," />
 
 <item itemtype="Node" CircId="Node-38" mainComp="false" Pos="1156,732" />
 
@@ -29,6 +29,10 @@
 <item itemtype="Node" CircId="Node-63" mainComp="false" Pos="1036,732" />
 
 <item itemtype="Node" CircId="Node-66" mainComp="false" Pos="1040,700" />
+
+<item itemtype="Node" CircId="Node-69" mainComp="false" Pos="940,560" />
+
+<item itemtype="Node" CircId="Node-72" mainComp="false" Pos="896,560" />
 
 <item itemtype="Connector" uid="connector-28" startpinid="Resistor-3-rPin" endpinid="Led-13-lPin" pointList="1084,700,1100,700" />
 
@@ -50,7 +54,7 @@
 
 <item itemtype="Connector" uid="Connector-57" startpinid="Switch-46-pinP0" endpinid="Node-59-0" pointList="876,532,876,560" />
 
-<item itemtype="Connector" uid="Connector-58" startpinid="m328 TQFP-1-PORTD2" endpinid="Node-59-1" pointList="940,580,940,560,876,560" />
+<item itemtype="Connector" uid="Connector-58" startpinid="m328 TQFP-1-PORTD2" endpinid="Node-69-0" pointList="940,580,940,560" />
 
 <item itemtype="Connector" uid="Connector-60" startpinid="Node-59-2" endpinid="Resistor-49-rPin" pointList="876,560,876,580" />
 
@@ -61,5 +65,13 @@
 <item itemtype="Connector" uid="Connector-65" startpinid="Oscope-61-Pin1" endpinid="Node-66-1" pointList="1100,552,1040,552,1040,700" />
 
 <item itemtype="Connector" uid="Connector-67" startpinid="Node-66-2" endpinid="m328 TQFP-1-PORTB0" pointList="1040,700,964,700,964,684" />
+
+<item itemtype="Connector" uid="Connector-68" startpinid="Oscope-61-Pin2" endpinid="Node-69-1" pointList="1100,584,1084,584,1084,500,940,500,940,560" />
+
+<item itemtype="Connector" uid="Connector-70" startpinid="Node-69-2" endpinid="Node-72-0" pointList="940,560,896,560" />
+
+<item itemtype="Connector" uid="Connector-71" startpinid="m328 TQFP-1-PORTD3" endpinid="Node-72-1" pointList="916,604,896,604,896,560" />
+
+<item itemtype="Connector" uid="Connector-73" startpinid="Node-72-2" endpinid="Node-59-1" pointList="896,560,876,560" />
 
 </circuit>
