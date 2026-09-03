@@ -33,12 +33,17 @@ void GPIO_incBar() {
 	PORTD |= 0b10000000; //Aciona bit mais significativo
 }
 
+void GPIO_decBar() {
+	PORTD = PORTD << 1;
+}
+
 void PCINT_config() {
 	PCICR  |= (1<<PCIE0); //Habilita grupo PCINT0-PCINT7
 	PCMSK0 |= (1<<PCINT3)|(1<<PCINT2)|(1<<PCINT1)|(1<<PCINT0); //Habilita interrupção PCINT0-PCINT3
 }
 
 ISR(PCINT0_vect) {
+	//Lógica da tecla W
 	uint8_t tCurrentKeyState_w = 0;
 	if((PINB & (1<<PINB0)) != 0) { //Testa pino PB0
 		//PB0 = 1, tecla w solta
@@ -56,6 +61,24 @@ ISR(PCINT0_vect) {
 	}
 	gKeyState_w = tCurrentKeyState_w;
 	
+	//Lógica da tecla S
+	uint8_t tCurrentKeyState_s = 0;
+	if((PINB & (1<<PINB2)) != 0) { //Testa pino PB2
+		//PB2 = 1, tecla s solta
+		tCurrentKeyState_s = KEY_RELEASED;
+		} else {
+		//PB2 = 0, tecla s pressionada
+		tCurrentKeyState_s = KEY_PRESSED;
+	}
+	if(tCurrentKeyState_s == KEY_PRESSED && gKeyState_s == KEY_RELEASED) {
+		//tecla S, acabou de ser pressionada
+		GPIO_decBar();
+	} else
+	if(tCurrentKeyState_s == KEY_RELEASED && gKeyState_s == KEY_PRESSED) {
+		//tecla S, acabou de ser solta
+	}
+	gKeyState_s = tCurrentKeyState_s;
+
 	PORTC ^= (1<<PORTC0);	//seta pino PC0
 	//_delay_ms(100);
 	//PORTC &= ~(1<<PORTC0);	//zera pino PC0
