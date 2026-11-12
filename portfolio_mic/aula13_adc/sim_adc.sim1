@@ -1,0 +1,21 @@
+<circuit version="1.0.0-RC3" rev="1148" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="m328 TQFP-1" mainComp="false" Show_id="true" Show_Val="false" Pos="860,580" rotation="0" hflip="1" vflip="1" label="m328 TQFP-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Auto_Load="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" />
+
+<item itemtype="Led" CircId="Led-2" mainComp="false" Show_id="false" Show_Val="false" Pos="900,704" rotation="90" hflip="1" vflip="1" label="Led-2" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ω" />
+
+<item itemtype="Resistor" CircId="Resistor-3" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="900,748" rotation="90" hflip="1" vflip="1" label="Resistor-3" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="100 Ω" />
+
+<item itemtype="Voltage Source" CircId="Voltage Source-4" mainComp="false" ShowProp="Value_Volt" Show_id="false" Show_Val="true" Pos="1040,596" rotation="0" hflip="-1" vflip="1" label="Voltage Source-4" idLabPos="-32,-48" labelrot="0" valLabPos="-8,30" valLabRot="0" Value_Volt="1.1 V" MaxValue="1.1 V" />
+
+<item itemtype="Ground" CircId="Ground-7" mainComp="false" Show_id="false" Show_Val="false" Pos="900,792" rotation="0" hflip="1" vflip="1" label="Ground-7" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Connector" uid="Connector-5" startpinid="m328 TQFP-1-PORTB0" endpinid="Led-2-lPin" pointList="900,676,900,688" />
+
+<item itemtype="Connector" uid="Connector-6" startpinid="Led-2-rPin" endpinid="Resistor-3-lPin" pointList="900,720,900,732" />
+
+<item itemtype="Connector" uid="Connector-8" startpinid="Ground-7-Gnd" endpinid="Resistor-3-rPin" pointList="900,776,900,764" />
+
+<item itemtype="Connector" uid="Connector-9" startpinid="Voltage Source-4-outPin" endpinid="m328 TQFP-1-PORTV3" pointList="1012,612,956,612" />
+
+</circuit>
